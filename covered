@@ -1,3 +1,24 @@
-variable
+variable:
+    string:
+        "string"
+        String:from("String")
+    integers:
+        i8, u8, i16, u16, i32, u32, i64, u64, isize, usize
+    floats:
+        f32, f64 
+    characters:
+        char
+    tuples:
+        let t : (i32, f64, char) = (42, 6.12, 'h');
+        let (a, b, c) = t
+        // t.0 => 42, t.1 => 6.12, t.2 => 'h'
+        arrays:
+        let a = [1,2,3,4,5,6,7,8,9,0]
+        // a[index] = value
+        
+        
+        
+        scope {}
 
-scope {}
+// println!({:?}, t) --unknown
+// println!({:#?}, t) --unknown --pretty

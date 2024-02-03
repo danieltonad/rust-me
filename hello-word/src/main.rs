@@ -1,3 +1,4 @@
 fn main() {
-    println!("Hello, world!");
+    let _sum = 2 + 2;
+    println!("Sum: {}", _sum);
 }

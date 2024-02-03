@@ -1,13 +1,13 @@
 use std::mem;
 
 fn main() {
-    let sum: i32 = 2;
-    let y: i32 = 0;
-    let mut a : [i32; 10]= [1,2,3,4,5,6,7,8,9,0];
+    // let sum: i32 = 2;
+    // let y: i32 = 0;
+    // let mut a : [i32; 10]= [1,2,3,4,5,6,7,8,9,0];
 
-    tuples_example();
+    // tuples_example();
 
-    array_samples();
+    string_samples();
     
     //     let  y: i32 = 200;
     //     println!("sum = {}, Y = {}", sum, y)
@@ -37,4 +37,13 @@ fn array_samples(){
     println!("Part size: {} \n Mem: {}", part.len(), mem::size_of_val(&part));
 }
 
-f
+fn string_samples(){
+    let literal_string = "Hello Boy!";
+    let a = String::from("Hello, ");
+    let b = String::from("Daniel");
+    let slice = &literal_string[2..5];
+
+    let concat =  a + &b;
+
+    println!("{:#?}", concat);
+}

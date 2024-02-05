@@ -73,3 +73,7 @@ fn borrow1(v: &Vec<i32>){
 fn borrow2(v: &Vec<i32>){
     println!("{}", v[10] + v[12]);
 }
+
+fn count(v: &Vec<i32>, val: i32) -> usize{
+    v.into_iter().filter(|&&x| x == val).count()
+}

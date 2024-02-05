@@ -7,7 +7,20 @@ fn main() {
 
     // tuples_example();
 
-    string_samples();
+    let mut v: Vec<i32> = Vec::new();
+
+    for i in 1..1000{
+        v.push(i);   
+    }
+
+    v = re(v);
+    println!("still own v: {} {}", v[0], v[1]);
+    
+    borrow1(&v);
+    println!("still own v: {} {}", v[0], v[1]);
+
+    borrow2(&v);
+    println!("still own v: {} {}", v[0], v[1]);
     
     //     let  y: i32 = 200;
     //     println!("sum = {}, Y = {}", sum, y)
@@ -46,4 +59,17 @@ fn string_samples(){
     let concat =  a + &b;
 
     println!("{:#?}", concat);
+}
+
+fn re(v: Vec<i32>) -> Vec<i32> {
+    println!("{}", v[120] + v[111]);
+    v
+}
+
+fn borrow1(v: &Vec<i32>){
+    println!("{}", (*v)[10] + (*v)[11]);
+}
+
+fn borrow2(v: &Vec<i32>){
+    println!("{}", v[10] + v[12]);
 }

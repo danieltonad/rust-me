@@ -128,18 +128,39 @@ struct Object {
 
 fn loop_sample(){
     let mut a = 0;
-    'a:loop {
-        a += 1;
-        println!("LOOP A");
-        'b:loop {
-            println!("Loop B");
-            'c:loop {
-                println!("Loop C");
-                break 'b
-                if a >= 2 {
-                    break 'a
-                }
-            }
-        }
+    // 'a:loop {
+    //     a += 1;
+    //     println!("LOOP A");
+    //     'b:loop {
+    //         println!("Loop B");
+    //         'c:loop {
+    //             println!("Loop C");
+    //             break 'b
+    //             if a >= 2 {
+    //                 break 'a
+    //             }
+    //         }
+    //     }
+    // }
+
+    // match statement
+    let x = 15;
+    match x {
+        1 | 3 | 5 => println!("odd no"),
+        2 | 4 | 6 => println!("one"),
+        // 9..=20 => println!("Range"),
+        n @ 13 ..= 19 => println!("n {}", n),
+        // 3 => println!("three"),
+        _ => println!("unknown"),
+    }
+    
+    let pair = (-2, -2);
+    
+    match pair {
+        (0, y) => println!("y: {}", y),
+        (x, y) if x == y => println!("Equals"),
+        (x, 0) => println!("x: {}", x),
+        _ => println!("no match"),
+        
     }
 }

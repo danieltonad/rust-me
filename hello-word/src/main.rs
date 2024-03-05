@@ -1,49 +1,65 @@
 use std::mem;
 
 fn main() {
-    let o = Object {
-        width: 20,
-        height: 30,
-    };
-
-    println!(
-        "width: {}, height: {} \n Area: {}",
-        o.width,
-        o.height,
-        o.bind_area()
-    );
+    // let o = Object {
+    //     width: 20,
+    //     height: 30,
+    // };
+    
+    // let a = Object::new(57, 83);
+    
+    // a.show();
+    // o.show();
+    
+    loop_sample();
     // let sum: i32 = 2;
     // let y: i32 = 0;
     // let mut a : [i32; 10]= [1,2,3,4,5,6,7,8,9,0];
-
+    
     // tuples_example();
-
+    
     // let mut v: Vec<i32> = Vec::new();
 
     // for i in 1..1000{
     //     v.push(i);
     // }
     // v = re(v);
-    // println!("still own v: {} {}", v[0], v[1]);
-
+    // println!("still own v: {} {}", v[0], v[1]); 
+    
     // borrow1(&v);
     // println!("still own v: {} {}", v[0], v[1]);
-
+    
     // borrow2(&v);
     // println!("still own v: {} {}", v[0], v[1]);
-
+    
     //     let  y: i32 = 200;
     //     println!("sum = {}, Y = {}", sum, y)
     // }
-
+    
     // println!("sum = {}, Y = {}", sum, y)
     // greet_me("Solarin")
 }
 
 // bind func to struct
 impl Object {
-    fn bind_area(&self) -> u32 {
+    fn area(&self) -> u32 {
         self.width * self.height
+    }
+    
+    fn show(&self){
+        println!(
+            "width: {}, height: {} \n Area: {}",
+            self.width,
+            self.height,
+            self.area()
+        );
+    }
+    
+    fn new(width: u32, height: u32) -> Object{
+        Object{
+            width: width,
+            height: height,
+        }
     }
 }
 
@@ -66,9 +82,9 @@ fn tuples_example() {
 
 fn array_samples() {
     let arr: [i32; 5] = [1, 2, 3, 4, 5];
-
+    
     let part = &arr[2..4];
-
+    
     println!(
         "Part size: {} \n Mem: {}",
         part.len(),
@@ -81,9 +97,9 @@ fn string_samples() {
     let a = String::from("Hello, ");
     let b = String::from("Daniel");
     let slice = &literal_string[2..5];
-
+    
     let concat = a + &b;
-
+    
     println!("{:#?}", concat);
 }
 
@@ -104,7 +120,26 @@ fn count(v: &Vec<i32>, val: i32) -> usize {
     v.into_iter().filter(|&&x| x == val).count()
 }
 
+#[derive(Debug)]
 struct Object {
     width: u32,
     height: u32,
+}
+
+fn loop_sample(){
+    let mut a = 0;
+    'a:loop {
+        a += 1;
+        println!("LOOP A");
+        'b:loop {
+            println!("Loop B");
+            'c:loop {
+                println!("Loop C");
+                break 'b
+                if a >= 2 {
+                    break 'a
+                }
+            }
+        }
+    }
 }

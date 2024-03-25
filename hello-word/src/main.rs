@@ -164,3 +164,8 @@ fn loop_sample(){
         
     }
 }
+
+
+fn enum_sample() {
+    
+}

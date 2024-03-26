@@ -22,7 +22,10 @@ pub fn run(){
     // create string with capacity
     let mut s = String::with_capacity(10);
     s.push('a');
-    s.push_str(" - string opu");
+    s.push_str(" - string");
+
+    assert_eq!(10, s.capacity());
+
     println!("{}", s)
 
 }

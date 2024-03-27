@@ -1,8 +1,9 @@
 // mod print;
 // mod vars;
-mod strings;
+mod examples;
+use examples::text_pyramid;
 
 fn main(){
     // print::run();
-    strings::run();
+    text_pyramid::run()
 }

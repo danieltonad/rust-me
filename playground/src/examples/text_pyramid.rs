@@ -9,5 +9,10 @@ pub fn run(){
     io::stdin().read_line(&mut text)
         .expect("Unable to read text");
 
-    println!("Text: {}", text)
+    let chars: Vec<char> = text.chars().filter(|&c| c != '\r' && c != '\n').collect();
+
+    for i in 1..=chars.len() {
+        println!("{}", &text[0..i]);
+    }
+
 }

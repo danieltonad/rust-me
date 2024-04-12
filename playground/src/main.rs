@@ -1,11 +1,12 @@
 // mod print;
 // mod vars;
-mod vectors;
+// mod vectors;
 // mod examples;
 // use examples::text_pyramid;
+mod loops;
 
 fn main(){
     // print::run();
-    vectors::run();
+    loops::run();
     // text_pyramid::run()
 }

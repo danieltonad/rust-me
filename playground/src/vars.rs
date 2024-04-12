@@ -12,4 +12,7 @@ pub fn run(){
     // multiple vars
     let (name, age) = ("Brad", 24);
     println!("{} is {}", name, age);
+
+    // shorthand If
+    let is_of_age = if age >= 21 {true} else {false};
 }
